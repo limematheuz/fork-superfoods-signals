@@ -1,0 +1,13 @@
+<!-- primera forma -->
+<!-- <ul>
+  @for(food of foods; track food.id){
+    <li>{{food.name}}</li>
+  }
+</ul> -->
+
+<!-- segunda forma y tercera forma -->
+<ul>
+  @for(food of foods(); track food.id){
+    <li>{{food.name}}</li>
+  }
+</ul>
