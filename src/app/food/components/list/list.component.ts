@@ -1,4 +1,4 @@
-import { Component,input,Input, Signal } from '@angular/core';
+import { Component,EventEmitter,input,Input, Output, Signal } from '@angular/core';
 import { Food } from '../../../shared/models/Food';
 
 @Component({
@@ -15,6 +15,9 @@ export class ListComponent {
   // @Input() foods!:Signal<Food[]>;
   // tercera forma
   foods=input<Food[]>();
+  @Output() sentFoodToMenu= new EventEmitter<Food>();
 
-
+  addToMenu(food:Food){
+    this.sentFoodToMenu.emit(food);
+  }
 }

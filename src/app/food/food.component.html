@@ -2,4 +2,5 @@
 <!-- primera forma -->
 <!-- <app-list [foods]="foods"></app-list> -->
 <!-- segunda y tercera forma -->
-<app-list [foods]="foods()"></app-list>
+<app-list [foods]="foods()" (sentFoodToMenu)="onFoodMenu($event)"></app-list>
+<app-form [foodForm]="foodForm" (sentForm)="onSubmit($event)"></app-form>

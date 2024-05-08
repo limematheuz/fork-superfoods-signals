@@ -8,6 +8,10 @@
 <!-- segunda forma y tercera forma -->
 <ul>
   @for(food of foods(); track food.id){
-    <li>{{food.name}}</li>
+    <li>
+      <p>{{food.name}}</p>
+      <button (click)="addToMenu(food)">Add food</button>
+    </li>
+
   }
 </ul>

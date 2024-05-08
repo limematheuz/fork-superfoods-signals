@@ -1,1 +1,8 @@
-<p>form works!</p>
+<form [formGroup]="foodForm" (ngSubmit)="submit()">
+  <input type="text" formControlName="name">
+  <input type="number" formControlName="calories">
+  <input type="text" formControlName="image">
+  <input type="number" formControlName="quantity">
+
+  <button type="submit">Submit</button>
+</form>
