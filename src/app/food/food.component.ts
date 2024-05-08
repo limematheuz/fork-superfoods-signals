@@ -5,6 +5,7 @@ import { ListComponent } from './components/list/list.component';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
 import { Food } from '../shared/models/Food';
 import { FormComponent } from "./components/form/form.component";
+import { MenuService } from '../shared/services/menu.service';
 
 @Component({
     selector: 'app-food',
@@ -15,6 +16,7 @@ import { FormComponent } from "./components/form/form.component";
 })
 export class FoodComponent implements OnInit{
   private foodService = inject(FoodService);
+  private menuService = inject(MenuService);
   private formBuilder = inject(FormBuilder);
 
   foods = this.foodService.filterArray;
@@ -27,7 +29,7 @@ export class FoodComponent implements OnInit{
   }
 
   onFoodMenu(food:Food){
-    
+    this.menuService.addToMenu(food)
   }
 
   onSubmit(food:Food){

@@ -1,0 +1,6 @@
+<h2>Menu - Calories {{totalCalories()}}</h2>
+<ul>
+  @for(food of menu();track $index){
+    <li>{{food.name}}-{{food.calories}}</li>
+  }
+</ul>
